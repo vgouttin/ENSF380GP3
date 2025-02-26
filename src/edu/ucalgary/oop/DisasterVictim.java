@@ -127,7 +127,7 @@ public class DisasterVictim {
 	}
 
 	private static boolean isValidDateFormat(String date) {
-		return false;
+		
 	}
 	
 	private int convertDateStringToInt(String dateStr) {
