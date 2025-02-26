@@ -1,5 +1,7 @@
 package edu.ucalgary.oop;
 
+import java.util.regex.*;
+
 public class ReliefService {
 	private Inquirer inquirer;
 	private DisasterVictim missingPerson;
@@ -61,10 +63,23 @@ public class ReliefService {
 	}
 	
 	private boolean isValidDateFormat(String date) {
-		
+		Pattern datePattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
+		Matcher match = datePattern.matcher(date);
+		if(match.matches()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public String getLogDetails() {
-		
+	    return "Inquirer: " + getInquirer().getFirstName() 
+	    		+ ", Missing Person: " + getMissingPerson().getFirstName()
+	    		+ (getMissingPerson().getLastName() != null ? " "
+	            + getMissingPerson().getLastName() : "")
+	            + ", Date of Inquiry: " + getDateOfInquiry() 
+	            + ", Info Provided: "+ getInfoProvided() 
+	            + ", Last Known Location: " + getLastKnownLocation().getName();
 	}
 }

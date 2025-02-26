@@ -1,10 +1,12 @@
 package edu.ucalgary.oop;
 
+import java.util.List;
+
 public class Location {
 	private String name;
 	private String address;
-	private DisasterVictim[] occupants;
-	private Supply[] supplies;
+	private List<DisasterVictim> occupants;
+	private List<Supply> supplies;
 	
 	public Location(String name, String address) {
 		this.name = name;
@@ -27,35 +29,36 @@ public class Location {
 		this.address = address;
 	}
 
-	public DisasterVictim[] getOccupants() {
+	public List<DisasterVictim> getOccupants() {
+		
 		return occupants;
 	}
 
-	public void setOccupants(DisasterVictim[] occupants) {
+	public void setOccupants(List<DisasterVictim> occupants) {
 		this.occupants = occupants;
 	}
 
-	public Supply[] getSupplies() {
+	public List<Supply> getSupplies() {
 		return supplies;
 	}
 
-	public void setSupplies(Supply[] supplies) {
+	public void setSupplies(List<Supply> supplies) {
 		this.supplies = supplies;
 	}
 	
 	public void addOccupant(DisasterVictim occupant) {
-		
+		this.occupants.add(occupant);
 	}
 	
 	public void removeOccupant(DisasterVictim occupant) {
-		
+		this.occupants.remove(occupant);
 	}
 	
 	public void addSupply(Supply supply) {
-		
+		this.supplies.add(supply);
 	}
 	
 	public void removeSupply(Supply supply) {
-		
+		this.supplies.remove(supply);
 	}
 }
