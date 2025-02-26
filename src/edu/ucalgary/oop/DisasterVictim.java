@@ -18,9 +18,11 @@ public class DisasterVictim {
 		this.ENTRY_DATE = ENTRY_DATE;
 	}
 	
-	public DisasterVictim(String firstName, String ENTRY_DATE, String dateOfBirth) {
+	public DisasterVictim(String firstName, String ENTRY_DATE,
+			String dateOfBirth) {
 		if (!isValidDateFormat(ENTRY_DATE) || !isValidDateFormat(dateOfBirth)) {
-			throw new IllegalArgumentException("Not a valid date format. Please enter a date in the form yyyy-MM-dd")
+			throw new IllegalArgumentException("Not a valid date format. "
+					+ "Please enter a date in the form yyyy-MM-dd");
 		}
 		this.firstName = firstName;
 		this.ENTRY_DATE = ENTRY_DATE;
@@ -49,7 +51,8 @@ public class DisasterVictim {
 
 	public void setDateOfBirth(String dateOfBirth) {
 		if (!isValidDateFormat(dateOfBirth)) {
-			throw new IllegalArgumentException("Not a valid date format. Please enter a date in the form yyyy-MM-dd");
+			throw new IllegalArgumentException("Not a valid date format. "
+					+ "Please enter a date in the form yyyy-MM-dd");
 		}
 		this.dateOfBirth = dateOfBirth;
 	} 
